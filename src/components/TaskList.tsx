@@ -1,15 +1,21 @@
+import React, { useContext } from "react";
+import { AppContext } from "../context";
+import { ITodo, TodoContextType } from "../@types/todo";
+import Task from "./Task";
+
 const TaskList = () => {
+  const { todo, updateTodo } = useContext(AppContext) as TodoContextType;
+
   return (
-    <div>
-      <ul>
-        <li>Hit the gym</li>
-        <li>Pay bills</li>
-        <li>Meet George</li>
-        <li>Buy eggs</li>
-        <li>Read a book</li>
-        <li>Organize office</li>
-      </ul>
-    </div>
+    <>
+      {todo.map((task: ITodo) => {
+        try {
+          <Task key={task.id} updateTodo={updateTodo} todo={task} />;
+        } catch (error) {
+          console.log(error);
+        }
+      })}
+    </>
   );
 };
 

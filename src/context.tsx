@@ -9,14 +9,12 @@ const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     {
       id: 1,
       title: "to do 1",
-      desc: "to do",
       status: false,
       dLine: 4,
     },
     {
       id: 2,
       title: "to do 2",
-      desc: "to do",
       status: true,
       dLine: 1,
     },
@@ -25,7 +23,6 @@ const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const newTodo: ITodo = {
       id: Math.random(),
       title: todos.title,
-      desc: todos.desc,
       status: false,
       dLine: todos.dLine,
     };
