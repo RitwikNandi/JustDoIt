@@ -8,7 +8,7 @@ export interface ITodo {
 }
 
 export type TodoContextType = {
-  todos: ITodo[];
+  todo: ITodo[];
   saveTodo: (todo: ITodo) => void;
   updateTodo: (id: number) => void;
 };
